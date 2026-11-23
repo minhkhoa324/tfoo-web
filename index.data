@@ -59361,6 +59361,12 @@ https://github.com/notofonts/noto-fonts/tree/main/hinted/ttf/NotoSansMono
 It is redistributed under the SIL Open Font License in `OFL.txt`.
 The SDL text backend rasterizes glyphs using the stb_truetype copy already
 included with Dear ImGui and caches their SDL textures for the renderer lifetime.
+
+Glyphs are cached by Unicode codepoint and native pixel dimensions. Rasterization
+includes the renderer's layout transform and the window's pixel density; glyph
+textures draw at one texture pixel per output pixel with pixel-aligned placement.
+The 8-unit character advance and 16-unit line spacing remain layout metrics,
+independent of the glyph texture's resolution.
 ‰PNG
 
    IHDR  æ  æ   …ü®*  \fcaBX  \fjumb   jumdc2pa  €  ª 8›qc2pa   \@jumb   Gjumdc2ma  €  ª 8›qurn:c2pa:f47a06af-11c0-442e-8f09-a4e958bc750b   |jumb   )jumdc2as  €  ª 8›qc2pa.assertions   	Ñjumb   ;jumd@Ë2»ŠH§*ÖôCic2pa.icon    c2sh¸•Š¹öØRëbÃzj)ß   bfdb image/svg+xml   	wbidb<svg width="716" height="716" viewBox="0 0 716 716" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -259664,6 +259670,12 @@ Language files are copied with the other metadata into the packaged client.
   <string name="item.echo_ring.armour">+20 to armour</string>
   <string name="item.echo_ring.damage">25% increased damage</string>
   <string name="item.echo_ring.health">20% reduced maximum health</string>
+  <string name="options.smaller">Smaller (-5%)</string>
+  <string name="options.larger">Larger (+5%)</string>
+  <string name="options.reset">Reset to 75%</string>
+  <string name="options.ui_scale">UI scale: {percent}%</string>
+  <string name="options.scale_hint">Text and panels - Left / Right to adjust</string>
+  <string name="options.save_failed">Scale applied; could not save preference.</string>
 </resources>
 <?xml version="1.0" encoding="UTF-8"?>
 <resources language="vi">
@@ -259979,6 +259991,12 @@ Language files are copied with the other metadata into the packaged client.
   <string name="item.echo_ring.armour">+20 giÃ¡p</string>
   <string name="item.echo_ring.damage">TÄƒng 25% sÃ¡t thÆ°Æ¡ng</string>
   <string name="item.echo_ring.health">Giáº£m 20% sinh lá»±c tá»‘i Ä‘a</string>
+  <string name="options.smaller">Nh? h?n (-5%)</string>
+  <string name="options.larger">L?n h?n (+5%)</string>
+  <string name="options.reset">??t l?i 75%</string>
+  <string name="options.ui_scale">T? l? giao di?n: {percent}%</string>
+  <string name="options.scale_hint">Ch? v? b?ng - Tr?i / Ph?i ?? ch?nh</string>
+  <string name="options.save_failed">?? ?p d?ng; kh?ng th? l?u t?y ch?n.</string>
 </resources>
 {
   "base_experience": 15,
