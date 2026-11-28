@@ -323768,7 +323768,7 @@ category currently have equal selection probability.
 {
   "title": "@event.god_spawn.title",
   "avatar": "src/client/assets/npcs/god/male_1/animation.json",
-  "name": "@event.god_spawn.name",
+  "name": "@npc.god.knowledge.name",
   "description": "@event.god_spawn.description"
 }
 {
@@ -324484,8 +324484,21 @@ Language files are copied with the other metadata into the packaged client.
   <string name="death.menu">Back to Menu</string>
   <string name="event.ok">OK</string>
   <string name="event.god_spawn.title">A God Has Descended</string>
-  <string name="event.god_spawn.name">Aurelion</string>
-  <string name="event.god_spawn.description">Aurelion, the Radiant, has come down to walk among mortals. He waits near the village; find him and he may grant you his blessing.</string>
+  <string name="npc.god.knowledge.name">Karfian</string>
+  <string name="npc.info.unnamed">Stranger</string>
+  <string name="npc.info.job">Job: {job}</string>
+  <string name="npc.info.age">Age: {age}</string>
+  <string name="npc.age.eternal">Eternal</string>
+  <string name="npc.job.unknown">Unknown</string>
+  <string name="npc.job.villager">Villager</string>
+  <string name="npc.job.trader">Trader</string>
+  <string name="npc.job.wizard">Wizard</string>
+  <string name="npc.job.knight">Knight</string>
+  <string name="npc.job.hunter">Hunter</string>
+  <string name="npc.job.priest">Priest</string>
+  <string name="npc.job.god">God</string>
+  <string name="npc.menu.open_inventory">Open Inventory</string>
+  <string name="event.god_spawn.description">Karfian, God of Knowledge, has come down to walk among mortals. He waits near the village; he will bless those who best embody his gift of knowledge.</string>
   <string name="event.location">{direction}, {tiles} tiles away</string>
   <string name="event.location.here">Right here</string>
   <string name="event.more">{count} more waiting</string>
@@ -325066,8 +325079,21 @@ Language files are copied with the other metadata into the packaged client.
   <string name="death.menu">Về menu chính</string>
   <string name="event.ok">Đồng ý</string>
   <string name="event.god_spawn.title">Thần Linh Giáng Thế</string>
-  <string name="event.god_spawn.name">Aurelion</string>
-  <string name="event.god_spawn.description">Aurelion, Đấng Rạng Ngời, đã giáng xuống cõi trần. Ngài đang chờ gần ngôi làng; hãy tìm ngài để nhận phước lành.</string>
+  <string name="npc.god.knowledge.name">Karfian</string>
+  <string name="npc.info.unnamed">Người lạ</string>
+  <string name="npc.info.job">Nghề nghiệp: {job}</string>
+  <string name="npc.info.age">Tuổi: {age}</string>
+  <string name="npc.age.eternal">Vĩnh hằng</string>
+  <string name="npc.job.unknown">Không rõ</string>
+  <string name="npc.job.villager">Dân làng</string>
+  <string name="npc.job.trader">Thương nhân</string>
+  <string name="npc.job.wizard">Pháp sư</string>
+  <string name="npc.job.knight">Hiệp sĩ</string>
+  <string name="npc.job.hunter">Thợ săn</string>
+  <string name="npc.job.priest">Tu sĩ</string>
+  <string name="npc.job.god">Thần linh</string>
+  <string name="npc.menu.open_inventory">Mở hành trang</string>
+  <string name="event.god_spawn.description">Karfian, Thần Tri Thức, đã giáng xuống cõi trần. Ngài đang chờ gần ngôi làng; ngài sẽ ban phước cho những ai xứng đáng nhất với tri thức của ngài.</string>
   <string name="event.location">{direction}, cách {tiles} ô</string>
   <string name="event.location.here">Ngay tại đây</string>
   <string name="event.more">Còn {count} sự kiện đang chờ</string>
@@ -406345,6 +406371,98 @@ To spawn an additional monster type in the game, add its JSON, register its
   }
 }
 {
+  "languages": {
+    "en": {
+      "format": "{first} {last}",
+      "first_names": {
+        "male": ["Arthur", "Edmund", "Gareth", "Henry", "Oliver", "Roland",
+                 "Simon", "Thomas", "Walter", "William", "Hugh", "Robin"],
+        "female": ["Alice", "Beatrice", "Clara", "Eleanor", "Emma", "Isabel",
+                   "Lucy", "Margaret", "Matilda", "Rose", "Agnes", "Joan"]
+      },
+      "last_names": ["Baker", "Brook", "Carter", "Fletcher", "Fisher", "Hill",
+                     "Miller", "Shepherd", "Smith", "Thatcher", "Turner", "Wood"]
+    },
+    "vi": {
+      "format": "{last} {middle} {first}",
+      "first_names": {
+        "male": ["An", "Bảo", "Dũng", "Hải", "Hùng", "Khang",
+                 "Long", "Minh", "Nam", "Phúc", "Quang", "Tuấn"],
+        "female": ["Anh", "Châu", "Hà", "Hạnh", "Hoa", "Lan",
+                   "Linh", "Mai", "Ngọc", "Thảo", "Trang", "Vy"]
+      },
+      "middle_names": {
+        "male": ["Văn", "Đức", "Hữu", "Minh", "Quốc", "Thành"],
+        "female": ["Thị", "Ngọc", "Thu", "Kim", "Bảo", "Thanh"]
+      },
+      "last_names": ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Huỳnh",
+                     "Phan", "Vũ", "Võ", "Đặng", "Bùi", "Đỗ"]
+    }
+  }
+}
+{
+    "needs": {
+        "hunger": {
+            "description": "The need for food to sustain energy and health.",
+            "default_value": 100,
+            "decrease_rate": 1,
+            "priority": 1
+        },
+        "thirst": {
+            "description": "The need for water to maintain hydration.",
+            "default_value": 100,
+            "decrease_rate": 1,
+            "priority": 2
+        },
+        "rest": {
+            "description": "The need for sleep or rest to recover energy.",
+            "default_value": 100,
+            "decrease_rate": 1,
+            "priority": 3
+        },
+        "social": {
+            "description": "The need for social interaction and companionship.",
+            "default_value": 100,
+            "decrease_rate": 1,
+            "priority": 4
+        },
+        "safety": {
+            "description": "The need for security and protection from harm.",
+            "default_value": 100,
+            "decrease_rate": 0,
+            "priority": 5
+        },
+        "fun": {
+            "description": "The need for entertainment and leisure activities.",
+            "default_value": 100,
+            "decrease_rate": 1,
+            "priority": 6
+        },
+        "faith": {
+            "description": "The need for spiritual fulfillment and connection.",
+            "default_value": 100,
+            "decrease_rate": 0,
+            "priority": 7
+        }
+    }
+}{
+    "traits": [
+        "friendly",
+        "aggressive",
+        "curious",
+        "shy",
+        "helpful",
+        "greedy",
+        "brave",
+        "cowardly",
+        "loyal",
+        "deceptive",
+        "intelligent",
+        "naive",
+        "wise",
+        "cruel"
+    ]
+}{
   "type": "OffHand",
   "items": [
     {"name": "Wooden Shield", "subtype": "Shield", "level": 1, "stats": {"armour": 12, "block_chance": 0.15}},
@@ -406477,7 +406595,9 @@ To spawn an additional monster type in the game, add its JSON, register its
 ]
 {
   "mana_regeneration_percent": 5,
-  "life_regeneration_percent": 1
+  "life_regeneration_percent": 1,
+  "starting_health": 100,
+  "starting_mana": 100
 }
 {
   "type": "Ring",
